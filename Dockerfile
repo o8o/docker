@@ -14,8 +14,8 @@ LABEL io.k8s.description="Java Application Builder" \
     # (run, assemble, save-artifacts)
     io.openshift.s2i.scripts-url="image:///usr/libexec/s2i"
 
-RUN apt-get update
-RUN apt-get install gettext-base
+RUN apt-get update -qq && \
+    apt-get install -yq gettext-base
 
 RUN apt-get update -qq && \
  DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
