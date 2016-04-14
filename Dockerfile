@@ -60,7 +60,7 @@ USER builder
 # Copy the S2I scripts to /usr/libexec/s2i since we set the label that way
 COPY  .s2i/bin/ /usr/libexec/s2i/
 COPY  scripts/entrypoint.sh /usr/libexec/entrypoint.sh
-COPY  scripts/passwd.template ${HOME]/passwd.template
+COPY  scripts/passwd.template ${HOME}/passwd.template
 
 RUN chmod 777 /usr/libexec/entrypoint.sh
 
