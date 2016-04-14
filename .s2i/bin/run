@@ -1,0 +1,7 @@
+#!/bin/bash -e
+#spring-boot-hello-world-1.0-SNAPSHOT.jar
+if [ -z $APPLICATION_JAR_NAME ]; then
+   echo "Aborting ... you must set environment variable APPLICATION_JAR_NAME to a jar application to start"
+   exit -1
+fi
+exec /usr/bin/java -jar /opt/app/bin/$APPLICATION_JAR_NAME
