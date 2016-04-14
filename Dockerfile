@@ -62,8 +62,6 @@ COPY  .s2i/bin/ /usr/libexec/s2i/
 COPY  scripts/entrypoint.sh /usr/libexec/entrypoint.sh
 COPY  scripts/passwd.template ${HOME}/passwd.template
 
-RUN chmod 777 /usr/libexec/entrypoint.sh
-
 ENTRYPOINT "/usr/libexec/entrypoint.sh"
 
 # Modify the usage script in your application dir to inform the user how to run
