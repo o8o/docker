@@ -3,7 +3,7 @@
 FROM maven:3.3.9-jdk-8
 
 # Here you can specify the maintainer for the image that you're building
-MAINTAINER andrea.lambruschini@telecomitalia.it
+MAINTAINER andrea.lambruschini@gmail.com
 
 # Set the labels that are used for Openshift to describe the builder image.
 LABEL io.k8s.description="Java Application Builder" \
