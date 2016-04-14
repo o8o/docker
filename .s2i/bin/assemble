@@ -15,15 +15,15 @@ if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   mv /tmp/artifacts/. ./
 fi
 
-LOCAL_SOURCE_DIR=/opt/app/src
+LOCAL_SOURCE_DIR=${HOME}/app/src
 mkdir -p $LOCAL_SOURCE_DIR
 
-DEPLOY_DIR=/opt/app/bin
+DEPLOY_DIR=${HOME}/app/bin
 mkdir -p $DEPLOY_DIR
 
 cp -Rf /tmp/src/. $LOCAL_SOURCE_DIR
-chgrp -R 0 $LOCAL_SOURCE_DIR
-chmod -R g+rw $LOCAL_SOURCE_DIR
+#chgrp -R 0 $LOCAL_SOURCE_DIR
+#chmod -R g+rw $LOCAL_SOURCE_DIR
 
   if [ -z "$MAVEN_ARGS" ]; then
     export MAVEN_ARGS="package -Popenshift -DskipTests"
@@ -46,6 +46,6 @@ fi
 
 #cp -f $LOCAL_SOURCE_DIR/target/*.jar $DEPLOY_DIR
 cp -f `find $LOCAL_SOURCE_DIR -name $FILTER_APPLICATION_JAR_NAME` $DEPLOY_DIR
-  chgrp -R 0 $DEPLOY_DIR
-  chmod -R g+rw $DEPLOY_DIR
+#  chgrp -R 0 $DEPLOY_DIR
+#  chmod -R g+rw $DEPLOY_DIR
 
