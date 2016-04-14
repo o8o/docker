@@ -45,7 +45,7 @@ if [ $ERR ne 0 ]; then
 fi
 
 #cp -f $LOCAL_SOURCE_DIR/target/*.jar $DEPLOY_DIR
-cp -f `find $LOCAL_SOURCE_DIR -name $FILTER_APPLICATION_JAR_NAME` $DEPLOY_DIR
+cp -f `find $LOCAL_SOURCE_DIR -name "${FILTER_APPLICATION_JAR_NAME}"` $DEPLOY_DIR
 #  chgrp -R 0 $DEPLOY_DIR
 #  chmod -R g+rw $DEPLOY_DIR
 
