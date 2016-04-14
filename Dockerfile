@@ -16,10 +16,11 @@ LABEL io.k8s.description="Java Application Builder" \
 
 # Copy the S2I scripts to /usr/libexec/s2i since we set the label that way
 COPY  .s2i/bin/ /usr/libexec/s2i/
-COPY  scripts/entrypoint.sh /usr/libexec/entrypoint.sh
+#COPY  scripts/entrypoint.sh /usr/libexec/entrypoint.sh
 
-RUN groupadd -r builder && useradd -r -m -g builder builder
-USER builder
+#RUN groupadd -r builder && useradd -r -m -g builder builder
+RUN useradd -r -m -u 999 -U 999 -m -d /home/builder
+USER 999
 
 #ENTRYPOINT "/usr/libexec/entrypoint.sh"
 
