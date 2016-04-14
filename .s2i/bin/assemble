@@ -15,10 +15,10 @@ if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   mv /tmp/artifacts/. ./
 fi
 
-LOCAL_SOURCE_DIR=${HOME}/app/src
+LOCAL_SOURCE_DIR=/opt/app/src
 mkdir -p $LOCAL_SOURCE_DIR
 
-DEPLOY_DIR=${HOME}/app/bin
+DEPLOY_DIR=/opt/app/bin
 mkdir -p $DEPLOY_DIR
 
 cp -Rf /tmp/src/. $LOCAL_SOURCE_DIR
